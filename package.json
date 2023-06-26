@@ -27,7 +27,6 @@
   "dependencies": {
     "canvas": "^2.11.2",
     "commander": "^11.0.0",
-    "got": "^11.8.6",
-    "minimist": "^1.2.8"
+    "got": "^11.8.6"
   }
 }
