@@ -26,6 +26,7 @@
   "homepage": "https://github.com/rushkii/TG-SWBot#readme",
   "dependencies": {
     "canvas": "^2.11.2",
+    "got": "^11.8.6",
     "minimist": "^1.2.8"
   }
 }
