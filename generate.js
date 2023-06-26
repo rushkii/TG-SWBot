@@ -474,9 +474,7 @@
     const relicData = character.relics[i]
 
     const relicIconFilename = relicData.icon.split("/").at(-1)
-    const relicIconIndex = relicIconFilename.split("_")
-    const relicIconFile = `${relicIconIndex[0]}_${relicIconIndex[1] === "0" ? "5" : "6"}.png`
-    const relicIcon = await loadImage(`./assets/relics/${relicIconFile}`)
+    const relicIcon = await loadImage(`./assets/relics/${relicIconFilename}`)
 
     const MAIconFile = relicData.main_affix.icon.split("/").at(-1)
     const relicMAIcon = await loadImage(`./assets/icons/attributes/${MAIconFile}`)
@@ -612,7 +610,7 @@
   ctx.fillText("Canvas NodeJS", canvasW-50, canvasH-20)
 
   const buffer = canvas.toBuffer("image/png", { quality: 1, compressionLevel: 0, });
-  if(options.as_file) {
+  if(options.as_file || options.as_file === "true") {
     const output = `output/${data.player.uid}-${data.player.nickname}.png`
     fs.writeFileSync(output, buffer);
     console.log(`Image saved to \x1b[1m${output}\x1b[0m`)
